@@ -82,8 +82,8 @@ class cfxs
 		ccm=strrchr(names[j],'.');
 		if(ccm != NULL)
 		{
-		    /*printf("PXX: 0x%x\n",ccm);
-		    printf("INDEX:: %d\n",ccm-names[j]);*/ //for cut just last point '.' http://stackoverflow.com/questions/5309471/getting-file-extension-in-c
+		    //printf("PXX: 0x%x\n",ccm);
+		    //printf("INDEX:: %d\n",ccm-names[j]); //for cut just last point '.' http://stackoverflow.com/questions/5309471/getting-file-extension-in-c
 		    for(k=0;k<ccm-names[j];k++)
 		    	nsxt[l][k]=names[j][k];
 		    for(k=0;k<strlen(names[j]);k++)
@@ -115,12 +115,16 @@ class cfxs
 	    {
 		sprintf(ccm,FFMPEG);
 	    	strcat(ccm, " -i ");
+		strcat(ccm,"\"");
 		strcat(ccm,zpath);
 		strcat(ccm,nsxte[k]);
+		strcat(ccm,"\"");
 		strcat(ccm," ");
+		strcat(ccm,"\"");
 		strcat(ccm,spath);
 		strcat(ccm,nsxt[k]);
 		strcat(ccm,".mp3");
+		strcat(ccm,"\"");
 		//cout<<"CMD:: "<<ccm<<endl;
 		system(ccm);	
 	    }
