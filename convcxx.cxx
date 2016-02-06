@@ -121,7 +121,7 @@ class cfxs
 		strcat(ccm,spath);
 		strcat(ccm,nsxt[k]);
 		strcat(ccm,".mp3");
-		cout<<"CMD:: "<<ccm<<endl;
+		//cout<<"CMD:: "<<ccm<<endl;
 		system(ccm);	
 	    }
 	}
